@@ -20,10 +20,10 @@
 
 FOX_MANIFEST_ROOT=$(gettop)
 if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox.mk ]; then
-	#export PLATFORM_VERSION="11.0"
+	#export PLATFORM_VERSION="R12.1_0_A14"
 	if [ -z "$TW_DEFAULT_LANGUAGE" ]; then
-		unset TW_DEFAULT_LANGUAGE
-		export TW_DEFAULT_LANGUAGE="zh_CH"
+		set TW_DEFAULT_LANGUAGE
+		export TW_DEFAULT_LANGUAGE="en"
 	fi
 	export OF_KEEP_FORCED_ENCRYPTION=1
 	export OF_PATCH_AVB20=1
@@ -41,8 +41,8 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	export OF_NO_MIUI_PATCH_WARNING=1
 	export OF_USE_GREEN_LED=0
 
-	# use magisk 21.4 for the magisk addon
-	#export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-21.4.zip
+	# use magisk 28.1 for the magisk addon
+	#export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-28.1.zip
 
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
@@ -59,11 +59,11 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 
-	# -- add settings for R11 --
-	export FOX_R11=1
+	# -- add settings for "R12.1_0_A14" --
+	export FOX_R12=1
 	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
-	export OF_QUICK_BACKUP_LIST="/boot;/data;"
-	# -- end R11 settings --
+	export OF_QUICK_BACKUP_LIST="/boot;/data;vendor_boot;super;dtbo;"
+	# -- end R12 settings --
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
