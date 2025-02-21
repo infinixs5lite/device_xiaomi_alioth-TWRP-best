@@ -48,6 +48,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	export FOX_ASH_IS_BASH=1
 	export FOX_USE_NANO_EDITOR=1
 	export FOX_USE_TAR_BINARY=1
+        export OF_DEFAULT_TIMEZONE="CAT-1"
 	export FOX_USE_ZIP_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
